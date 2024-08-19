@@ -12,9 +12,6 @@ logger = logging.getLogger(__name__)
 # 저장된 모델 로드
 model = joblib.load('best_parking_model.pkl')
 
-# 주차장 코드 리스트 (예시로 사용자가 직접 정의, 실제로는 DB나 다른 데이터 소스로부터 가져올 수 있음)
-# parking_codes = [173831, 173867, 1037932, 1040225]  # 여기에 모든 주차장 코드를 나열
-
 db_config = {
     'user': 'root',        # DB 사용자명
     'password': 'paxp',    # DB 비밀번호
@@ -26,7 +23,7 @@ def fetch_parking_codes():
     try:
         connection = mysql.connector.connect(**db_config)
         cursor = connection.cursor()
-        cursor.execute("SELECT code FROM parking_codes")  # 테이블 이름을 실제 이름으로 변경하세요.
+        cursor.execute("SELECT code FROM parking_codes") 
         codes = [int(row[0]) for row in cursor.fetchall()]
         cursor.close()
         connection.close()

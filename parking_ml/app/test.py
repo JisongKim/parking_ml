@@ -9,7 +9,7 @@ data = pd.DataFrame({
     'parking_code': [171721, 1366590, 171900, 172051, 173005],
     'hour': [16, 16, 18, 19, 13],
     'minute': [27, 33, 46, 46, 1],
-    'weekday': ['Tuesday', 'Monday', 'Monday', 'Monday', 'Monday']
+    'weekday': ['Tuesday', 'Monday', 'Wednesday', 'Friday', 'Saturday']
 })
 
 # 예측 수행
